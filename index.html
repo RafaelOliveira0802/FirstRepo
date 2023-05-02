@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="condominio.ico" type="image/x-icon" />
+    <title>Reserva do SalãoBH ok</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="./script.js" defer></script>
+    <style>
+      body {
+        background-color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="form" method="post">
+      <div class="box">
+        <fieldset>
+          <!--Legenda-->
+          <legend><b>Reserva do Salão BH</b></legend>
+          <!--nome do requisitante-->
+          <div>
+            <label for="inident">Requisitante:</label>
+            <input
+              id="inident"
+              class="ident"
+              type="text"
+              name="requisitante"
+              placeholder="Nome Completo"
+              oninput="nameValidate"
+              required
+            />
+          </div>
+          <br />
+          <!--numero da casa-->
+          <div>
+            <label for="incasa">Casa:</label>
+            <input
+              id="incasa"
+              class="ident"
+              type="number"
+              name="casa"
+              placeholder="N° da Rsidência"
+              required
+            />
+          </div>
+          <br />
+          <!--difnição de inquilino ou proprietario-->
+          <div aria-required="true">
+            <p>Proprietario ou Inquilino?</p>
+            <input type="radio" id="iprop" name="tipo" />
+            <label for="iprop">Proprietario</label>
+            <input type="radio" id="iinq" name="tipo" />
+            <label for="iinq">Inquilino</label>
+            <br /><br />
+            <!--nome do proprietario-->
+            <label for="prop-real">Nome do Proprietario:</label>
+            <input
+              id="prop-real"
+              type="text"
+              class="ident"
+              placeholder="Nome do Proprietario"
+              required
+            />
+          </div>
+          <br />
+          <!--Data-->
+          <div>
+            <label for="date">Data:</label>
+            <input type="date" id="date" name="date" required />
+            <br /><br />
+            <!--hora-->
+            <label for="time">Hora:</label>
+            <input type="time" id="time" name="time" required />
+          </div>
+          <br />
+          <!--Convidados-->
+          <div class="ident">
+            <label for="list">Convidados:</label>
+            <input type="file" name="list" id="list" required />
+          </div>
+          <br />
+          <!--modal normas-->
+          <div onclick="AbrirModal()" id="btn">
+            <!-- <button class="btn">Abrir Normas</button > -->
+            <label for="accept" class="btn">Aceitar Normas</label>
+            <input
+              type="checkbox"
+              id="accept"
+              name="accept"
+              value="accept"
+              required
+            />
+          </div>
+
+          <div class="janela-modal" id="janela-modal">
+            <div class="modal">
+              <h1>NORMAS</h1>
+              <p>
+                Na qualidade de morador(a) do RESIDENCIAL BELO HORIZONTE situado
+                na Av. Presidente Tancredo Neves nº 5750, Parque Novo Horizonte
+                em São José dos Campos, sirvo-me da presente para requisitar
+                para meu uso privativo, o Salão de Festas do Residencial para a
+                data e horário acima indicados, pelo que, e na melhor forma de
+                direito, comprometo-me e responsabilizo-me pelo seguinte:
+              </p>
+              <p>
+                1- salão de festas será utilizado para a realização de festas,
+                bem como eventos ou reuniões dos moradores do condomínio
+                adimplentes com as taxas de condominial. Será permitida a
+                entrada de até 50 (cinquenta) pessoas, incluindo o condômino e
+                seus familiares, moradores ou não. A lista de convidados deverá
+                ser deixada na portaria até o dia do evento. A lista deverá
+                conter nome completo e RG dos convidados.
+              </p>
+              <p>
+                2- As reservas deverão ser feitas pelo aplicativo do condomínio.
+              </p>
+              <p>
+                3- As vagas para reserva do salão serão sempre liberadas no
+                último dia do mês para uso no mês seguinte.
+              </p>
+              <p>
+                4- A Reserva da locação só será aceita mediante a entrega do
+                TERMO DE RESPONSABILIDADE.
+              </p>
+              <p>
+                5-0 Horário de uso do salão de festas se inicia as 10:00hs e se
+                encerra impreterivelmente as 22:00hs.
+              </p>
+              <p>
+                6- É expressamente proibido o uso de bebidas alcoólicas para
+                menores de 18 (dezoito) anos.
+              </p>
+              <p>
+                7-É necessária a presença de um maior condômino responsável pelo
+                uso do salão durante toda a realização do evento.
+              </p>
+              <p>
+                8- Não será permitida a utilização do salão de festas para a
+                prática de jogos.
+              </p>
+              <p>
+                9- O espaço gramado a frente do salão poderá ser utilizado para
+                brinquedos como pula pula, e etc.
+              </p>
+              <p>
+                10 - Será de responsabilidade do requisitante, independente de
+                quem use o salão, a limpeza pesada, retirada dos lixos,
+                embalagens, limpeza da churrasqueira, retirada de decorações e
+                quaisquer outros itens que não façam parte do salão, reposição e
+                restauração por dano ocorrido nas instalações e/ou equipamentos.
+              </p>
+              <p>
+                11 - Inicia e cessa respectivamente após a vistoria efetuada em
+                companhia dos serviços gerais / membros do conselho diretivo/
+                sindico.
+              </p>
+              <p>
+                12- A não observância deste regulamento do uso do salão de
+                festas, implica o requisitante nas seguintes sanções a critério
+                do Corpo Diretivo:
+              </p>
+              <div class="subnormas">
+                <p>
+                  a) Suspensão do direito de uso por 03 (três) a 12 (doze)
+                  meses;
+                </p>
+                <p>b) Advertência;</p>
+                <p>c) Reposição do bem danificado;</p>
+                <p>
+                  d) Multa por uso indevido, no valor correspondente a 01 (uma)
+                  taxa condominial, vigente na época da infração.
+                </p>
+              </div>
+              <p>
+                13 O uso do salão de festas não se estende à circulação livre de
+                seus participantes por todas as áreas comuns do condomínio.
+              </p>
+              <p>
+                14-É vedado a utilização da piscina pelos convidados do evento.
+              </p>
+              <p>
+                15-É vedado a utilização de equipamentos sonoros, ou
+                instrumentos musicais.
+              </p>
+              <div onclick="aceitarModal('click')">
+                <button type="button" class="aceitar" id="aceitar">
+                  Aceitar
+                </button>
+              </div>
+            </div>
+          </div>
+          <br />
+          <!--Enviar-->
+          <div class="enviar">
+            <button type="submit" id="submit-Form">ENVIAR</button>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+  </body>
+</html>
