@@ -1,0 +1,151 @@
+.box {
+    background-color: rgb(125, 196, 180);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    border-radius: 15px;
+    
+}
+
+fieldset {
+    border: 3px solid rgb(35, 46, 112);
+}
+
+legend {
+    border: 1px solid rgb(35, 46, 112);
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(35, 46, 112);
+    border: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.ident {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+    color: rgb(0, 0, 0);
+}
+
+#date{
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-bottom: 5cm;
+    color: black;
+}
+
+#hora {
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-bottom: 5cm;
+    
+}
+
+.enviar {
+    text-align: center;   
+}
+
+#send{
+    
+    font-size: 20px;
+    background-color: rgb(35, 46, 112);
+    color: white;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-bottom: 5cm;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+label {
+    font-size: 20px;
+    color: rgb(0, 0, 0);   
+}
+
+.btn{
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color: rgb(35, 46, 112); 
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.janela-modal{
+    
+    width: 100vw;
+    height: 100vw;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.473);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal{
+    
+    width: 60%;
+    min-width: 450px;
+    min-height: 200px;
+    background-color: #ffffff8f;
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    font-size: 15px;
+}
+
+#aceitar{
+    text-align: center;
+}
+
+.aceitar{
+    width: 350px;
+    text-align: center;
+    padding: 15px 20px;
+    border: 1px solid #0c0c0c;
+    border-radius: 6px;
+    background-color: #df0e29;
+    font-size: 15px;
+}
+
+.janela-modal.abrir{
+    display: flex;
+}
+
+@keyframes abrirmodal{
+    from{
+        opacity: 0;
+        transform: translate3d(0, -20px, -5px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0, 0, 0);
+    }
+}
+
+.abrir .modal{
+    animation: abrirmodal 0.5s;
+}
