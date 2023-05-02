@@ -7,51 +7,49 @@ const timeInput = document.getElementById('#time')
 const fileInput = document.getElementById('#list')
 
 
-function submitForm() {
+function submitForm(e) {
+    e.preventDefault();
 
-    if (nameInput == ""){
+    //aqui falta add o nammeInput.value pois ele é um objeto
+
+    if (nameInpu == "") {
         alert("Precisa preencher o nome completo")
     }
 
-    if (casaInput == ""){
+    if (casaInput == "") {
         alert("Precisa o preencher o numero da residência")
     }
 
-    if (propInput == ""){
+    if (propInput == "") {
         alert("Precisa preencher o nome do Proprietario")
     }
 
-    if (dateInput ==""){
+    if (dateInput == "") {
         alert("Precisa preencher a data")
     }
 
-    if (timeInput == ""){
+    if (timeInput == "") {
         alert("Presisa preencher a hora do evnto")
     }
 
-    if (fileInput ==""){
+    if (fileInput == "") {
         alert("Precisa preencher com a Lista de convidados")
     }
-
-    form.addEventListener("submit", (e)=> {
-        e.proventDefalt();
-        form.submit();
-        
-    });
-    
 }
-  
+
 const modal = document.getElementById('janela-modal')
 
 function AbrirModal() {
-    modal.classList.add('abrir')   
+    modal.classList.add('abrir')
 }
 
 //modal
-function aceitarModal(){
-    modal.addEventListener('click',(event) =>{
-        if(event.target.id =='aceitar'){
+function aceitarModal() {
+    modal.addEventListener('click', (event) => {
+        if (event.target.id == 'aceitar') {
             modal.classList.remove('abrir')
         }
     })
 }
+
+document.getElementById("#submit-Form").addEventListener("Click", submitForm(this.Event))
